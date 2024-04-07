@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Additional custom styles can be added here */
+        .btn-left {
+            float: left;
+            margin-right: 10px;
+        }
+        .btn-right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="text-center">Exam Registration</h4>
+                </div>
+                <div class="card-body">
+                    <form action="submit_registration.php" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="candidatePhoto">Candidate Photo:</label>
+                            <input type="file" class="form-control-file" id="candidatePhoto" name="candidatePhoto" accept="image/*" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="candidateName">Candidate Name:</label>
+                            <input type="text" class="form-control" id="candidateName" name="candidateName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="regNo">Registration Number:</label>
+                            <input type="text" class="form-control" id="regNo" name="regNo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth:</label>
+                            <input type="date" class="form-control" id="dob" name="dob" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Programme:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="programme" id="beProgramme" value="BE" checked>
+                                <label class="form-check-label" for="beProgramme">BE</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="programme" id="meProgramme" value="ME">
+                                <label class="form-check-label" for="meProgramme">ME</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Department:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="department" id="civilDept" value="Civil" checked>
+                                <label class="form-check-label" for="civilDept">Civil</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="department" id="cseDept" value="Computer Science and Engineering">
+                                <label class="form-check-label" for="cseDept">Computer Science and Engineering</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="department" id="mechDept" value="Mechanical">
+                                <label class="form-check-label" for="mechDept">Mechanical</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="department" id="eceDept" value="ECE">
+                                <label class="form-check-label" for="eceDept">ECE</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="semester">Semester:</label>
+                            <select class="form-control" id="semester" name="semester" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="subjects">Subjects:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="subject1" name="subjects[]" value="CE101">
+                                <label class="form-check-label" for="subject1">CE101</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="subject2" name="subjects[]" value="CE201">
+                                <label class="form-check-label" for="subject2">CE201</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="subject3" name="subjects[]" value="CE301">
+                                <label class="form-check-label" for="subject3">CE301</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="subject4" name="subjects[]" value="CSE401">
+                                <label class="form-check-label" for="subject4">CSE401</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="subject5" name="subjects[]" value="CSE501">
+                                <label class="form-check-label" for="subject5">CSE501</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="subject6" name="subjects[]" value="ME301">
+                                <label class="form-check-label" for="subject6">ME301</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="subject7" name="subjects[]" value="ME401">
+                                <label class="form-check-label" for="subject7">ME401</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="subject8" name="subjects[]" value="ME501">
+                                <label class="form-check-label" for="subject8">ME501</label>
+                            </div>
+                        </div>
+                        <div id="countdown"></div>
+                        <button type="submit" class="btn btn-primary btn-left">Submit</button>
+                        <a href="view_registrations.php" class="btn btn-info btn-right">View</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and jQuery (optional, for Bootstrap components) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Set the deadline date for registration countdown (15th April 2024)
+    const deadlineDate = new Date('2024-04-15').getTime();
+
+    // Update the countdown every second
+    const countdownTimer = setInterval(function() {
+        // Get the current date and time
+        const currentDate = new Date().getTime();
+
+        // Calculate the remaining time in milliseconds
+        const remainingTime = deadlineDate - currentDate;
+
+        // Calculate days, hours, minutes, and seconds
+        const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+        // Display the countdown timer
+        document.getElementById('countdown').innerHTML = `
+            <p>Registration Deadline: ${days}d ${hours}h ${minutes}m ${seconds}s</p>
+        `;
+
+        // Stop the countdown when the deadline is reached
+        if (remainingTime < 0) {
+            clearInterval(countdownTimer);
+            document.getElementById('countdown').innerHTML = '<p>Registration Deadline has passed.</p>';
+        }
+    }, 1000); // Update every second (1000 milliseconds)
+                                       </script>
+<!-- Custom JS file (if needed) -->
+<script src="script.js"></script>
+
+</body>
+      </html>
+  
