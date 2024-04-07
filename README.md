@@ -13,26 +13,26 @@ EXIT;
 exam-registration-system/
 │
 ├── css/
-│   ├── style.css                # Custom CSS styles for the project
-│   └── bootstrap.min.css        # Bootstrap CSS framework (downloaded or linked)
+│   ├── style.css
+│   └── bootstrap.min.css
 │
 ├── js/
-│   ├── script.js                # JavaScript for interactive features (e.g., countdown)
-│   └── bootstrap.min.js         # Bootstrap JavaScript framework (downloaded or linked)
+│   ├── script.js
+│   └── bootstrap.min.js
 │
-├── uploads/                     # Directory to store uploaded candidate photos
+├── uploads/
 │
 ├── includes/
-│   ├── db.php                   # Database connection script
-│   ├── view_registration.php   # PHP script to view registration records
-│   ├── edit_registration.php   # PHP script to edit registration records
-│   └── delete_registration.php # PHP script to delete registration records
+│   ├── db.php
+│   ├── view_registration.php
+│   ├── edit_registration.php
+│   └── delete_registration.php
 │
-├── exam_registration.html      # HTML form for exam registration
-├── view_registrations.html      # HTML page to view registration records
+├── exam_registration.html
+├── view_registrations.html
 │
-├── submit_registration.php      # PHP script to handle form submission for registration
+├── submit_registration.php
 │
-├── index.html                   # Login page (if needed for future implementation)
+├── index.html
 │
-└── README.md                    # Project documentation and instructions
+└── README.md
