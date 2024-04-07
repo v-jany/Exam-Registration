@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Registrations</title>
+    <!-- Bootstrap CSS (via CDN) -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Additional custom styles can be added here */
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h2>View Registrations</h2>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Candidate Name</th>
+                    <th>Registration Number</th>
+                    <th>Date of Birth</th>
+                    <th>Programme</th>
+                    <th>Department</th>
+                    <th>Semester</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Include the database connection script
+                include_once "db.php";
+
+                // Query to retrieve registration records
+                $sql = "SELECT * FROM registrations";
+                $result = $conn->query($sql);
+
+                // Display registration records in table rows
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row["candidateName"]) . "</td>";
+                        echo "<td>" . htmlspecialchars($row["regNo"]) . "</td>";
+                        echo "<td>" . htmlspecialchars($row["dob"]) . "</td>";
+                        echo "<td>" . htmlspecialchars($row["programme"]) . "</td>";
+                        echo "<td>" . htmlspecialchars($row["department"]) . "</td>";
+                        echo "<td>" . htmlspecialchars($row["semester"]) . "</td>";
+                        echo "<td>";
+                        echo "<a href='edit_registration.php?id=" . $row["id"] . "' class='btn btn-primary btn-sm'>Edit</a> ";
+                        echo "<a href='delete_registration.php?id=" . $row["id"] . "' class='btn btn-danger btn-sm'>Delete</a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='7'>No registration records found.</td></tr>";
+                }
+
+                // Close database connection
+                $conn->close();
+                ?>
+            </tbody>
+        </table>
+        <a href="exam_registration.html" class="btn btn-success">Add New Registration</a>
+    </div>
+
+    <!-- Bootstrap JS (optional, for Bootstrap components) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+  </html>
+  
