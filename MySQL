@@ -1,0 +1,17 @@
+CREATE DATABASE exam_registration_db;
+USE exam_registration_db;
+CREATE TABLE registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    candidate_name VARCHAR(255) NOT NULL,
+    reg_no VARCHAR(20) NOT NULL,
+    dob DATE NOT NULL,
+    programme ENUM('BE', 'ME') NOT NULL,
+    department ENUM('Civil', 'Computer Science and Engineering', 'Mechanical', 'ECE') NOT NULL,
+    semester ENUM('1', '2', '3', '4', '5', '6', '7', '8') NOT NULL,
+    subjects TEXT NOT NULL,
+    photo_path VARCHAR(255) NOT NULL
+);
+INSERT INTO registrations (candidate_name, reg_no, dob, programme, department, semester, subjects, photo_path) VALUES
+('John Doe', '2022001', '1990-05-15', 'BE', 'Civil', '6', 'CE101, CE201, CE301', 'path_to_photo/johndoe.jpg'),
+('Jane Smith', '2022002', '1991-08-20', 'ME', 'Computer Science and Engineering', '4', 'CSE401, CSE501', 'path_to_photo/janesmith.jpg'),
+('Michael Johnson', '2022003', '1989-11-10', 'BE', 'Mechanical', '7', 'ME301, ME401, ME501', 'path_to_photo/michaeljohnson.jpg');
